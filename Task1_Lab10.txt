@@ -1,0 +1,19 @@
+abstract class Animal{
+abstract void makesound( );
+void makesoundtoo ( ){
+System.out.println("Animal is eating");}}
+class Dog extends Animal{
+void makesound( ){
+System.out.println("Dog is barking");}}
+class Cat extends Animal{
+void makesound( ){
+System.out.println("Cat is meowling");}}
+public class Lab9{
+public static void main (String [ ] args){
+Dog obj1= new Dog ( ) ;
+Cat obj2= new Cat ( );
+obj1.makesoundtoo( );
+obj1.makesound( );
+obj2.makesound( );
+obj2.makesoundtoo( );
+}}_

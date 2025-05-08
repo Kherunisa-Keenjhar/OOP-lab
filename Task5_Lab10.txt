@@ -1,0 +1,38 @@
+abstract class Employee {
+String name;
+int id;
+Employee(String name, int id) {
+this.name = name;
+this.id = id;}
+abstract double calculateSalary();}
+interface TaxPayer {
+void payTax();}
+class FullTimeEmployee extends Employee implements TaxPayer {
+private double monthlySalary;
+FullTimeEmployee(String name, int id, double salary) {
+super(name, id);
+this.monthlySalary = salary;}
+double calculateSalary() {
+return monthlySalary; }
+public void payTax() {
+System.out.println(name + " (Full-Time) pays tax on salary: " + (monthlySalary * 0.2)); }}
+class PartTimeEmployee extends Employee implements TaxPayer {
+private double hourlyRate;
+private int hoursWorked;
+PartTimeEmployee(String name, int id, double rate, int hours) {
+super(name, id);
+this.hourlyRate = rate;
+this.hoursWorked = hours; }
+double calculateSalary() {
+return hourlyRate * hoursWorked; }
+public void payTax() {
+double salary = calculateSalary();
+System.out.println(name + " (Part-Time) pays tax on salary: " + (salary * 0.1)); }}
+public class Lab9{
+public static void main(String[] args) {
+Employee fullTimeEmp = new FullTimeEmployee("ROSE", 101, 5000);
+Employee partTimeEmp = new PartTimeEmployee("ALICE............", 180, 70, 50);
+System.out.println("Full-Time Salary: " + fullTimeEmp.calculateSalary());
+((TaxPayer) fullTimeEmp).payTax();
+System.out.println("Part-Time Salary: " + partTimeEmp.calculateSalary());
+((TaxPayer) partTimeEmp).payTax(); }}

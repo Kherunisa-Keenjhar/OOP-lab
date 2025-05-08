@@ -1,0 +1,20 @@
+abstract class Shape {
+abstract double area(); }
+interface Printable {
+void print(); }
+class Rectangle extends Shape implements Printable {
+private double width;
+private double height;
+public Rectangle(double width, double height) {
+this.width = width;
+this.height = height; }
+double area() {
+ return width * height; }
+ public void print() {
+ System.out.println("Rectangle's width is " + width + " and height " + height);
+ System.out.println("Area: " + area());
+ System.out.println("Area has been calculated successfully!"); }}
+ public class Lab9 {
+ public static void main(String[] args) {
+ Rectangle obj = new Rectangle(7, 4);
+ obj.print();  }}
